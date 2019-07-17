@@ -10,6 +10,6 @@ You can take this file for a "clues" file.
 1. SQL injection breach
 2. Logic ?
 3. Steganography
-4. AES algorithm
+4. RSA algorithm
 5. GPG algorithm
 6. LSB encoding
