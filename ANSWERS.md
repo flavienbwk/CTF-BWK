@@ -7,11 +7,11 @@ Enter `' or 1 #` in the user field.
 3. This content will give you a base64 string which is an image :  
 `base64 -d paris.b64.txt | tr -d " \t\n\r" > paris.jpg`
 
-4. This image has en embeded archive. Perform this steganography command to get the archive :  
-`unzip -t paris.jpg`
-
-5. Open the PDF file in binary mode and look for archive password in the end of the file :  
+4. Open `paris.pdf` in binary mode and look for archive password in the end of the file :  
 `4c314bbe43abb522ec64c592ede1a19cf1a5314d03d5eb`
+
+5. This image has en embeded archive. Perform this steganography command to get the archive :  
+`unzip -t paris.jpg`
 
 6. In the archive, take a look to :  
 `.bash_history`
