@@ -1,5 +1,5 @@
 1. When browsing localhost:8080:  
-Enter `password' OR 1=1` in the password field.
+Enter `' or 1 #` in the user field.
 
 2. Downloading the PDF file and **copy past** the **white** content inside a new Paris.b64.txt file for example :  
 `paris.pdf`
