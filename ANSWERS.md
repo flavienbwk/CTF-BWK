@@ -1,7 +1,7 @@
 1. When browsing localhost:8080:  
 Enter `' or 1 #` in the user field.
 
-2. Downloading the PDF file and **copy past** the **white** content inside a new Paris.b64.txt file for example :  
+2. Downloading the PDF file and **copy past** the **white** content inside a new `paris.b64.txt` file for example :  
 `paris.pdf`
 
 3. This content will give you a base64 string which is an image :  
