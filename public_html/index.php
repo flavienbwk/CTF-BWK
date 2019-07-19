@@ -8,6 +8,29 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
+<?php
+    if(!empty($_POST)){
+      $host = 'mysql';
+      $user = 'root';
+      $pass = 'rootpassword';
+      $conn = mysqli_connect($host, $user, $pass, "SummerHackCamp");
+
+      if (!$conn) {
+          echo "Connection failed: ";
+      }else{
+        $passwd = md5($_POST['passwd']);
+        $query = mysqli_query($conn,"SELECT mail, password FROM users WHERE mail='$_POST[mail]' AND password='$passwd'") or die ("query not executed");
+        $reqToArr = mysqli_fetch_assoc($query);
+
+        if (isset($reqToArr["mail"])) {
+          echo "<SCRIPT LANGUAGE='JavaScript'>document.location.href='accueil.php?user=" . $reqToArr["mail"] . "';</SCRIPT>";
+          }
+      }
+      mysqli_close($conn);
+    }
+
+?>
+
     <div class="container">
     	<div class="d-flex justify-content-center h-100">
 
@@ -37,48 +60,79 @@
     						<input type="password" class="form-control" placeholder="password" name="passwd" required>
     					</div>
     					<div class="form-group">
+                <input type="button" value="Register" class="btn float-left login_btn" style="margin-top:100px;" onclick="changeForm('register')">
     						<input type="submit" value="Login" class="btn float-right login_btn" style="margin-top:100px;">
     					</div>
     				</form>
     			</div>
     		</div>
+
+
+        <div class="card register-div" style="display:none;">
+    			<div class="card-header">
+    				<h3>Register</h3>
+    				<div class="d-flex justify-content-end social_icon">
+    					<span><i class="fab fa-facebook-square"></i></span>
+    					<span><i class="fab fa-google-plus-square"></i></span>
+    					<span><i class="fab fa-twitter-square"></i></span>
+    				</div>
+    			</div>
+    			<div class="card-body">
+    				<form action='#' method="post">
+    					<div class="input-group form-group">
+    						<div class="input-group-prepend">
+    							<span class="input-group-text"><i class="fas fa-user"></i></span>
+    						</div>
+    						<input type="text" class="form-control" placeholder="mail address" name="mail">
+    					</div>
+              <div class="input-group form-group">
+    						<div class="input-group-prepend">
+    							<span class="input-group-text"><i class="fas fa-key"></i></span>
+    						</div>
+    						<input type="text" class="form-control" placeholder="password" name="passwd">
+    					</div>
+              <div class="input-group form-group">
+    						<div class="input-group-prepend">
+    							<span class="input-group-text"><i class="fas fa-key"></i></span>
+    						</div>
+    						<input type="text" class="form-control" placeholder="confirm password" name="confpasswd">
+    					</div>
+    					<div class="form-group">
+                <input type="submit" value="Register" class="btn float-left login_btn" style="margin-top:46px;">
+    						<input type="button" value="Login" class="btn float-right login_btn" style="margin-top:46px;" onclick="changeForm('sign in')">
+    					</div>
+    				</form>
+    			</div>
+    		</div>
+
+    	</div>
+
+
     	</div>
     </div>
   </body>
 
-<?php
-    if(!empty($_POST)){
-      $host = 'mysql';
-      $user = 'root';
-      $pass = 'rootpassword';
-      $conn = mysqli_connect($host, $user, $pass, "SummerHackCamp");
 
-      if (!$conn) {
-          echo "Connection failed: ";
-      }else{
-        $passwd = md5($_POST['passwd']);
-        $query = mysqli_query($conn,"SELECT mail, password FROM users WHERE password='$passwd' AND mail='$_POST[mail]'") or die ("query not executed");
-        if($query != "query not executed"){
-          $reqToArr = mysqli_fetch_assoc($query);
-          if($reqToArr['mail'] == $_POST['mail']){
-            // var_dump($reqToArr);
-            session_start();
-            var_dump($_SESSION);
-            header('Location: ./accueil.php');
-          }
-        }
-      }
-      mysqli_close($conn);
-    }
+  <script type="text/javascript">
 
-?>
+     function changeForm(param){
+       if(param == "register"){
+         $('.sign-in-div').hide()
+         $('.register-div').show()
+       }else if(param == "sign in"){
+         $('.sign-in-div').show()
+         $('.register-div').hide()
+       }
+     }
+
+   </script>
 
 
   <style>
       @import url('https://fonts.googleapis.com/css?family=Numans');
 
       html,body{
-      background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+      background-image: url('fondCChack.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       height: 100%;

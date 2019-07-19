@@ -8,19 +8,30 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
-    <div style="height: 20%; display: flex; justify-content: center; align-items: center; margin-top:17%;">
-      <h1>Will you find your way in Paris?</h1>
-    </div>
-    <div style="height: 100%; display: flex; justify-content: center; align-items: center; margin-top:5%;">
-      <a href="motivationDevops.pdf"><input type="button" value="See the PDF"></a>
-    </div>
+    <?php
+    if (isset($_GET['user']) && $_GET['user'] == 'clementv'){
+      ?>
+      <div style="height: 100%; display: flex; justify-content: center; align-items: center;">
+        <a href="paris.pdf"><input type="button" value="See the PDF"></a>
+      </div>
+      <?php
+    }else{
+      ?>
+      <SCRIPT LANGUAGE="JavaScript">
+        document.location.href="index.php"
+      </SCRIPT>
+      <?php
+    }
+    ?>
   </body>
-  
-<?php
-if (isset($_SESSION['user'])){
-  var_dump($_SESSION);
-}else{
-  header("HTTP/1.0 404 Not Found");
-}
-?>
+
+  <style>
+  html,body{
+    background-image: url('fondCChack.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+  }
+  </style>
 </html>

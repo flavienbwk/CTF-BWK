@@ -15,7 +15,7 @@ services:
       - frontend
       - backend
     ports:
-      - 80:80
+      - 8080:80
     volumes:
       - ./public_html/:/var/www/html/
   mysql:
@@ -30,7 +30,7 @@ services:
     image: adminer
     restart: always
     ports:
-      - 8080:8080
+      - 8081:8080
     depends_on:
       - mysql
     networks:
