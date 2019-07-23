@@ -3,10 +3,10 @@
 A dockerized Capture The Flag challenge for computer science students.  
 Get to know the basics !  
 
-For this challenge, I will bring you to Paris, France.
+For this challenge, I will bring you to Paris, France.  
 And I will introduce you to the "French Pentagon", the **Balard Hexagone**.  
 
-Level : **MEDIUM**.
+<p align-text="center">Level : **MEDIUM**</p>
 
 **DON'T READ `NOTIONS.md`, IT CONTAINS CLUES ABOUT THIS CHALLENGE.**
 
