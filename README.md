@@ -6,7 +6,9 @@ Get to know the basics !
 For this challenge, I will bring you to Paris, France.  
 And I will introduce you to the "French Pentagon", the **Balard Hexagone**.  
 
-<p style="align-text:center">Level : <b>MEDIUM</b></p>
+<hr/>
+<p align="center">Level : <b>MEDIUM</b></p>
+<hr/>
 
 **DON'T READ `NOTIONS.md`, IT CONTAINS CLUES ABOUT THIS CHALLENGE.**
 
